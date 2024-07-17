@@ -12,6 +12,7 @@ const Socials = () => {
             href="https://www.linkedin.com/in/wilson-liu-780255237/"
             className="text-blue-500 hover:underline"
             target="_blank"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </a>
@@ -22,6 +23,7 @@ const Socials = () => {
             href="https://github.com/wilsonliu2"
             className="text-gray-900 hover:underline"
             target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub
           </a>

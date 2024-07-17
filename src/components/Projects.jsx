@@ -56,7 +56,8 @@ const Projects = () => {
     },
     {
       title: "JWT Auth Fullstack",
-      description: "A full-stack application with JWT authentication.",
+      description:
+        "A full-stack application that implements and tests JWT authentication.",
       link: "https://github.com/wilsonliu2/jwt-auth-fullstack",
       icons: [
         { IconComponent: FaJava, color: colors.java },
@@ -70,7 +71,8 @@ const Projects = () => {
     },
     {
       title: "Fullstack Todo",
-      description: "A full-stack todo application.",
+      description:
+        "A todo list application built with React and Spring Boot. Features task management, categorization, and completion, with tasks saved to a MySQL database.",
       link: "https://github.com/wilsonliu2/fullstack-todo",
       icons: [
         { IconComponent: FaJava, color: colors.java },
@@ -93,7 +95,7 @@ const Projects = () => {
     },
     {
       title: "Library",
-      description: "A library management system.",
+      description: "A book management system.",
       link: "https://github.com/wilsonliu2/library",
       icons: [
         { IconComponent: IoLogoJavascript, color: colors.javascript },
