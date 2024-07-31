@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaCss3Alt, FaHtml5, FaJava, FaReact } from "react-icons/fa";
@@ -26,25 +26,28 @@ const colors = {
 };
 
 const Projects = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   const currentProject = {
-    title: "Currently Working On: NYC Health Map v2",
-    description:
-      "An enhanced version of the health map of New York City, featuring a landing page and navigation to different boroughs. This is a research project with Professor Sheena Philogene.",
-    link: "https://github.com/wilsonliu2/nyc-health-map-v2",
+    title: "Real-time Chat App",
+    description: "Work in progress",
+    link: "https://github.com/wilsonliu2/",
     icons: [
-      { IconComponent: SiLeaflet, color: colors.leaflet },
-      { IconComponent: SiD3Dotjs, color: colors.d3 },
+      { IconComponent: FaJava, color: colors.java },
+      { IconComponent: SiSpringboot, color: colors.springboot },
+      { IconComponent: SiSpringsecurity, color: colors.springsecurity },
       { IconComponent: IoLogoJavascript, color: colors.javascript },
-      { IconComponent: FaHtml5, color: colors.html },
-      { IconComponent: FaCss3Alt, color: colors.css },
+      { IconComponent: FaReact, color: colors.react },
+      { IconComponent: SiTailwindcss, color: colors.tailwind },
+      { IconComponent: SiMysql, color: colors.mysql },
     ],
   };
 
-  const projects = [
+  const featuredProjects = [
     {
       title: "NYC Health Map",
       description:
-        "A detailed health map of New York City, showcasing various health metrics and data points across different neighborhoods. This is a research project with Professor Sheena Philogene.",
+        "An enhanced version of the health map of New York City, featuring a landing page and navigation to different boroughs. A research project with Prof. Sheena Philogene.",
       link: "https://github.com/wilsonliu2/nyc-health-map",
       icons: [
         { IconComponent: SiLeaflet, color: colors.leaflet },
@@ -55,9 +58,76 @@ const Projects = () => {
       ],
     },
     {
-      title: "JWT Auth Fullstack",
+      title: "Full-stack Todo",
       description:
-        "A full-stack application that implements and tests JWT authentication.",
+        "A todo list application built with React and Spring Boot. Features task management, categorization, and completion, with tasks saved to a MySQL database.",
+      link: "https://github.com/wilsonliu2/fullstack-todo",
+      icons: [
+        { IconComponent: FaJava, color: colors.java },
+        { IconComponent: SiSpringboot, color: colors.springboot },
+        { IconComponent: IoLogoJavascript, color: colors.javascript },
+        { IconComponent: FaReact, color: colors.react },
+        { IconComponent: SiTailwindcss, color: colors.tailwind },
+        { IconComponent: SiMysql, color: colors.mysql },
+      ],
+    },
+  ];
+
+  const projects = [
+    {
+      title: "NYC Health Map",
+      description:
+        "An enhanced version of the health map of New York City, featuring a landing page and navigation to different boroughs. A research project with Prof. Sheena Philogene.",
+      link: "https://github.com/wilsonliu2/nyc-health-map",
+      icons: [
+        { IconComponent: SiLeaflet, color: colors.leaflet },
+        { IconComponent: SiD3Dotjs, color: colors.d3 },
+        { IconComponent: IoLogoJavascript, color: colors.javascript },
+        { IconComponent: FaHtml5, color: colors.html },
+        { IconComponent: FaCss3Alt, color: colors.css },
+      ],
+    },
+    {
+      title: "Sunset Park Health Map",
+      description:
+        "An interactive health map of Sunset Park, Brooklyn, visualizing key health metrics and demographic data to provide insights into the community's health status and needs.",
+      link: "https://github.com/wilsonliu2/sunset-park-health-map",
+      icons: [
+        { IconComponent: SiLeaflet, color: colors.leaflet },
+        { IconComponent: SiD3Dotjs, color: colors.d3 },
+        { IconComponent: IoLogoJavascript, color: colors.javascript },
+        { IconComponent: FaHtml5, color: colors.html },
+        { IconComponent: FaCss3Alt, color: colors.css },
+      ],
+    },
+    {
+      title: "NYC Data Jenks Natural Breaks",
+      description:
+        "This project uses the Jenks Natural Breaks Algorithm to determine optimal breakpoints for categorizing health and demographic data for my health maps.",
+      link: "https://github.com/wilsonliu2/nyc-health-data-jenks-breaks",
+      icons: [
+        { IconComponent: IoLogoJavascript, color: colors.javascript },
+        { IconComponent: FaHtml5, color: colors.html },
+        { IconComponent: FaCss3Alt, color: colors.css },
+      ],
+    },
+    {
+      title: "NYC Health Map Demo",
+      description:
+        "A detailed health map of New York City, showcasing various health metrics and data points across different neighborhoods.",
+      link: "https://github.com/wilsonliu2/nyc-health-map-demo",
+      icons: [
+        { IconComponent: SiLeaflet, color: colors.leaflet },
+        { IconComponent: SiD3Dotjs, color: colors.d3 },
+        { IconComponent: IoLogoJavascript, color: colors.javascript },
+        { IconComponent: FaHtml5, color: colors.html },
+        { IconComponent: FaCss3Alt, color: colors.css },
+      ],
+    },
+    {
+      title: "JWT Auth Full-stack",
+      description:
+        "A full-stack application that implements and tests JWT authentication and authorization.",
       link: "https://github.com/wilsonliu2/jwt-auth-fullstack",
       icons: [
         { IconComponent: FaJava, color: colors.java },
@@ -70,7 +140,7 @@ const Projects = () => {
       ],
     },
     {
-      title: "Fullstack Todo",
+      title: "Full-stack Todo",
       description:
         "A todo list application built with React and Spring Boot. Features task management, categorization, and completion, with tasks saved to a MySQL database.",
       link: "https://github.com/wilsonliu2/fullstack-todo",
@@ -118,17 +188,41 @@ const Projects = () => {
     <section className="container mx-auto p-8" id="projects">
       <div className="flex items-end space-x-2 mb-2">
         <h2 className="text-3xl font-bold">Projects</h2>
-        <p className="text-gray-500">(Updated as of 7/16/2024)</p>
+        <p className="text-gray-500">(Updated as of 7/31/2024)</p>
       </div>
+      <h3 className="text-2xl font-semibold mb-4">I am working on:</h3>
       <div className="mb-8">
         <ProjectCard {...currentProject} />
       </div>
-      <p className="text-lg mb-4">Projects (from most recent to oldest):</p>
-      <div className="flex overflow-x-auto space-x-4">
-        {projects.map((project, index) => (
+      <h3 className="text-2xl font-semibold mb-4">Featured Projects</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+        {featuredProjects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
       </div>
+      <div className="flex items-end space-x-2 mb-2">
+        <h3 className="text-2xl font-semibold">All Projects</h3>
+        <button
+          className="ml-auto text-blue-500"
+          onClick={() => setShowAllProjects(!showAllProjects)}
+        >
+          {showAllProjects ? (
+            <p className="hover:underline">Hide</p>
+          ) : (
+            <p className="hover:underline">Expand</p>
+          )}
+        </button>
+      </div>
+      {showAllProjects && (
+        <p className="text-gray-500">(From most recent to oldest)</p>
+      )}
+      {showAllProjects && (
+        <div className="flex overflow-x-auto space-x-4">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
+        </div>
+      )}
     </section>
   );
 };

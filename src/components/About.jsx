@@ -5,8 +5,9 @@ const About = () => {
     <section className="container mx-auto p-8">
       <h2 className="text-3xl font-bold mb-4">About Me</h2>
       <p className="text-lg">
-        I am a Computer Science student at Brooklyn College, aspiring to become
-        a full-stack developer.
+        Hi, my name is Wilson. I want to work as a full-stack developer one day,
+        I am passionate about coding and dedicated to improving my skills daily.
+        Thank you for visiting!
       </p>
     </section>
   );
